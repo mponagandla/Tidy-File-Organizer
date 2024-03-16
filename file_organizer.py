@@ -12,8 +12,6 @@ class FileOrganizer:
         self.iter = None
         self.fileMap = {}
 
-    # TODO: Get all the files list from all the directories
-
     def retrieve_files_directories(self):
         file_paths_list = []
         for directory in self.directories:
@@ -26,8 +24,8 @@ class FileOrganizer:
                         info = filetype.guess(dir)
                         if info is not None:
                             self.fileMap[dir] = {
-                                "file_name" : os.path.basename(dir),
-                                "file_type" : info.MIME
+                                "file_name": os.path.basename(dir),
+                                "file_type": info.MIME
                             }
                         else:
                             self.fileMap[dir] = 'None'
@@ -35,8 +33,6 @@ class FileOrganizer:
                     self.fileMap[dir] = 'Directory'
 
         return file_paths_list
-
-    # TODO: Loop through each file to determine the file types
     # TODO: Move each file to the respective folder
     # TODO: Documents/Tidy/Month/Week/FileType/name_MMDDYYYY.type
 
