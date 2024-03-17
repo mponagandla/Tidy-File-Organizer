@@ -23,8 +23,8 @@ class FileOrganizer:
                     with open(dir, "rb") as file:
                         info = filetype.guess(dir)
                         if info is not None:
-                            self.fileMap[dir] = {
-                                "file_name": os.path.basename(dir),
+                            self.fileMap[os.path.basename(dir)] = {
+                                "current_dir": dir.absolute(),
                                 "file_type": info.MIME
                             }
                         else:
