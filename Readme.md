@@ -1,1 +1,1 @@
-This is a FIle Organizer project in Python
+This is a File Organizer project in Python
